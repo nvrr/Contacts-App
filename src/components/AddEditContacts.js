@@ -39,32 +39,32 @@ function AddEditContacts({addContact,editContactData,editContact}) {
     const closeRef = useRef();
 
     return (
-        <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Add/Edit Contact</h5>
-        <button type="button" ref={closeRef} class="close" data-dismiss="modal" aria-label="Close">
+        <div className="modal-content">
+      <div className="modal-header">
+        <h5 className="modal-title" id="exampleModalLabel">Add/Edit Contact</h5>
+        <button type="button" ref={closeRef} className="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div className="modal-body">
        <form>
-  <div class="form-group">
-    <label for="formGroupExampleInput">Name</label>
-    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Name" value={contact.name} onChange={(e) => handleChange('name', e.target.value)} />
+  <div className="form-group">
+    <label htmlFor="formGroupExampleInput">Name</label>
+    <input type="text" className="form-control" id="formGroupExampleInput" placeholder="Name" value={contact.name} onChange={(e) => handleChange('name', e.target.value)} />
   </div>
-  <div class="form-group">
-    <label for="formGroupExampleInput2">Phone Number</label>
-    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Phone Number" value={contact.phoneNumber} onChange={(e) => handleChange('phoneNumber', e.target.value)} />
+  <div className="form-group">
+    <label htmlFor="formGroupExampleInput2">Phone Number</label>
+    <input type="text" className="form-control" id="formGroupExampleInput2" placeholder="Phone Number" value={contact.phoneNumber} onChange={(e) => handleChange('phoneNumber', e.target.value)} />
     </div>
-  <div class="form-group">
-    <label for="formGroupExampleInput2">Email</label>
-    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Email" value={contact.email} onChange={(e) => handleChange('email', e.target.value)} />
+  <div className="form-group">
+    <label htmlFor="formGroupExampleInput2">Email</label>
+    <input type="text" className="form-control" id="formGroupExampleInput2" placeholder="Email" value={contact.email} onChange={(e) => handleChange('email', e.target.value)} />
   </div>
 </form>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" onClick={() => handleSubmit()} >Submit</button>
+      <div className="modal-footer">
+        <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" className="btn btn-primary" onClick={() => handleSubmit()} >Submit</button>
       </div>
     </div>
     )

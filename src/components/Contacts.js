@@ -24,7 +24,9 @@ function Contacts({getAllContacts,contacts,getSingleContact,contact, deleteConta
             <button className='btn btn-primary' data-toggle="modal" data-target="#exampleModal">Add Contact</button>
         </div>
         <div className='container mt-4'>
-  <table class="table table-hover">
+        {contacts.length === 0 && <p className='text-danger text-center'>No Contact Found!</p>}
+  { contacts.length > 0 && 
+  <table className="table table-hover">
   <thead>
     <tr>
       <th scope="col">S.No</th>
@@ -35,8 +37,8 @@ function Contacts({getAllContacts,contacts,getSingleContact,contact, deleteConta
     </tr>
   </thead>
   <tbody>
-  {contacts.length > 0 && contacts.map((contact, index) => (
-    <tr>
+  {contacts.map((contact, index) => (
+    <tr key={index}>
       <th >{index + 1}</th>
       <td>{contact.name}</td>
       <td>{contact.phoneNumber}</td>
@@ -50,14 +52,14 @@ function Contacts({getAllContacts,contacts,getSingleContact,contact, deleteConta
     </tr>
    ))}
   </tbody>
- </table>
+ </table> }
 
  {/* Button trigger modal  */}
 
-<div class="modal fade" id="exampleModal" tabindex="-1" 
+<div className="modal fade" id="exampleModal" tabIndex="-1" 
       role="dialog" aria-labelledby="exampleModalLabel" 
       aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
+  <div className="modal-dialog modal-dialog-centered" role="document">
     <AddEditContacts editContactData={contact} />
   </div>
 </div>
